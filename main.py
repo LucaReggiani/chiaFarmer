@@ -20,7 +20,39 @@ def index():
                "'plots of land' are remunerated with blocks of the blockchain. A VDF (Evident Defer Capacity) worker, " \
                "called 'Timelord', confirms the blocks to permit the blockchain to advance and rewards the client " \
                "with Chia. "
-    return render_template('index.html', section1=section1)
+
+    section2 = "To farm Chia, you should initially make at least one 'Plot'. Plots are files that take up space on " \
+               "your hard drive. Making plots requires significant investment and the number of plots you can create " \
+               "in parallel depends on the power of your CPU (number of cores). You can move plots from one machine " \
+               "to another without any restrictions, so it is also possible to generate plots on a more powerful " \
+               "machine, and transfer them once finished to a less powerful one. "
+
+    section3 = "The Plotting process requires more space than the final output, known as temporary space. The amount " \
+               "of space required depends on the size k you are plotting. For instance, a k32 Plot has a size of " \
+               "around 100 GB yet needs around 239 GB of transitory space to be made. The area of the impermanent " \
+               "space is a significant choice while plotting. The best arrangement is to devote the quickest hard " \
+               "plate to deal with the impermanent space.  Plotting on a slower disk such as the classic HDD is " \
+               "possible, but will take longer. The slow speed of the disk can be compensated by plotting on several " \
+               "disks in parallel. However, if you are plotting on HDD, it is not a good idea to plot on the same " \
+               "disk more than one Plot at a time, otherwise the read/write head will bounce around trying to write " \
+               "Plot files to different sectors of the disk at the same time, which will make it slow. Toward the " \
+               "finish of the Plotting cycle, the substance of the impermanent records are compressed and moved to " \
+               "the destination Plot file. "
+
+    section4 = "It is by using the created plots that farming can be done. Farming, or harvesting, can be considered " \
+               "as a round of bingo. The plots are the bingo folders and the way of collecting consists of waiting " \
+               "that the number will be called and checking the envelope to check whether you have won. This is a " \
+               "trivial activity and utilizations an extremely limited quantity of power. Farming is a real green " \
+               "alternative to the status quo imposed by Bitcoin, in spite of the fact that it actually requires a " \
+               "force supply. \n\n You can download and install the farming software visiting the following link: " \
+               "https://github.com/Chia-Organization/chia-blockchain "
+
+    return render_template('index.html',
+                           section1=section1,
+                           section2=section2,
+                           section3=section3,
+                           section4=section4
+                           )
 
 
 '''
