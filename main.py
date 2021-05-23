@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -47,11 +47,19 @@ def index():
                "force supply. \n\n You can download and install the farming software visiting the following link: " \
                "https://github.com/Chia-Organization/chia-blockchain "
 
+    section5 = "After this brief introduction, it should be clearer to understand the service we offer: we sell " \
+               "pre-created plots. Do you want to enter the world of farming, but don't have machines powerful enough " \
+               "to generate plots? Do you want to avoid wasting time and money by getting started in the world of " \
+               "cryptocurrencies right away? Don't worry, the plots we produce are at your disposal. Everyone can " \
+               "buy, but only a few are able to generate cryptocurrencies and sell them. Be your own source, " \
+               "not the buyer. "
+
     return render_template('index.html',
                            section1=section1,
                            section2=section2,
                            section3=section3,
-                           section4=section4
+                           section4=section4,
+                           section5=section5
                            )
 
 
@@ -65,7 +73,6 @@ def page_not_found():
 def internal_server_error():
     return render_template('500.html')
 '''
-
 
 if __name__ == '__main__':
     app.run()
